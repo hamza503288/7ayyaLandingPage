@@ -800,21 +800,112 @@ img {
 }
 
 /* --- Mobile Adjustments --- */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.2rem;
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
     .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 80px;
+    }
+
+    /* Header */
+    .header-logo-container {
+        width: 80px;
+        height: 80px;
+        padding: 0.5rem;
+    }
+
+    .logo {
         font-size: 2.2rem;
+    }
+
+    .logo-tagline {
+        font-size: 0.8rem;
     }
 
     .header .nav-menu {
         display: none;
-        /* In a real app, I'd add a burger menu, but sticking to requested simplicity for now */
     }
 
+    /* Hero */
+    .hero {
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .btn-pulse {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1.2rem 2rem;
+    }
+
+    /* Sections */
+    .section {
+        padding: 4rem 0;
+    }
+
+    /* Expert */
+    .expert-visual {
+        max-width: 300px;
+        margin: 0 auto 3rem;
+    }
+
+    .partner-logos-container {
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .partner-mini-logo {
+        height: 60px;
+    }
+
+    /* CTA */
     .cta-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 2rem;
+        margin: 15% auto;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .logo-tagline {
+        font-size: 0.7rem;
+    }
+
+    .header-logo-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    .modal-logo {
+        height: 50px;
     }
 }
