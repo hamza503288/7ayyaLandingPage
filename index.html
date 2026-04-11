@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez 7AYYA, la solution d'épargne d'élite d'Assurances STAR. Protégez et faites fructifier votre patrimoine avec une expertise VIP.">
+    <title>7AYYA — Épargne d'Élite & Patrimoine Premium</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css?v=2">
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-logo-container">
+                <img src="assets/logo.png" alt="STAR Logo" class="splash-logo">
+            </div>
+            <h2 class="splash-text">Voulez-vous vraiment bien gérer, conserver et protéger votre fortune et votre
+                patrimoine contre toute dégradation ?</h2>
+            <h1 class="splash-highlight">Jusqu'à 40 000 DT d'impôts en moins par an</h1>
+            <p class="splash-insurer">Assureur : <span class="insurer-name">SHIRI FARES HAMZA</span></p>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="logo-group">
+                <div class="header-logo-container">
+                    <img src="assets/logo.png" alt="STAR Logo" class="header-logo">
+                </div>
+                <div class="logo-text-group">
+                    <a href="#" class="logo">7AYYA</a>
+                    <span class="logo-tagline">Payer moins d'impôts</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#importance" class="nav-link">Excellence</a>
+                <a href="#avantages" class="nav-link">Avantages</a>
+                <a href="#expert" class="nav-link">Expertise</a>
+                <a href="#contact" class="btn btn-outline nav-btn">Consultation Privée</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title reveal">
+                    Voulez-vous vraiment bien gérer, conserver et protéger votre fortune et votre patrimoine contre
+                    toute dégradation ?
+                </h1>
+                <p class="hero-subtitle reveal">
+                    7AYYA — La solution d'épargne d'élite conçue pour les investisseurs qui exigent l'excellence.
+                </p>
+                <div class="hero-cta reveal">
+                    <button class="btn btn-gold btn-pulse open-offer-modal">Obtenir une Offre Personnalisée</button>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- Importance Section -->
+        <section class="section section-importance" id="importance">
+            <div class="container grid">
+                <div class="importance-text">
+                    <span class="section-tag reveal">Vision Stratégique</span>
+                    <h2 class="section-title reveal">Pourquoi 7AYYA ?</h2>
+                    <p class="section-description reveal">
+                        Dans un contexte économique instable, protéger et faire fructifier son patrimoine est devenu une
+                        priorité absolue. 7AYYA n'est pas qu'un produit d'assurance ; c'est un instrument financier
+                        conçu pour les
+                        personnes souhaitant sécuriser leur avenir financier tout en bénéficiant des meilleures
+                        rendements sur le marché Tunisien avec des déductions fiscales importantes.
+                    </p>
+                    <div class="gold-line reveal"></div>
+                </div>
+                <div class="importance-image-container reveal">
+                    <img src="assets/7ayya-promo.png" alt="7AYYA Epargne Performance"
+                        class="importance-image shadow-gold">
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="section section-benefits bg-alt" id="avantages">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title reveal">L'Exclusivité 7AYYA</h2>
+                    <p class="section-subtitle reveal">Des avantages conçus pour la haute finance.</p>
+                </div>
+
+                <div class="benefits-grid">
+                    <!-- Benefit 1 -->
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            </svg>
+                        </div>
+                        <h3>Avantage Fiscal</h3>
+                        <p>Économisez jusqu'à 40 000 DT d'impôts par an grâce aux déductions fiscales exceptionnelles
+                            qu'offre votre contrat 7AYYA.</p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                <polyline points="16 7 22 7 22 13" />
+                            </svg>
+                        </div>
+                        <h3>Rentabilité Maximale</h3>
+                        <p>Meilleurs rendements sur le marché Tunisien garantis par des placements bien étudiés :
+                            Bourse, Immobilier, Private
+                            Equity, Bon de Trésor</p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                        </div>
+                        <h3>Sécurité Patrimoniale</h3>
+                        <p>Protection totale de votre capital généré et transmission optimisée à vos héritiers en toute
+                            sérénité.</p>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                            </svg>
+                        </div>
+                        <h3> Haute Flexibilité</h3>
+                        <p> Ne cherchez plus la complexité et trouvez la simplicité dans la souplesse de notre contrat
+                            d'assurance-vie. Vous versez librement les montants et votre capital sera constitué au fur
+                            et à mesure, en fonction de vos possibilités financières..</p>
+                    </div>
+
+                    <!-- Benefit 5 -->
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M1 12h22M12 1v22" />
+                            </svg>
+                        </div>
+                        <h3>Transparence</h3>
+                        <p>Vous aurez un suivi annuel de l'épargne constituée avec tous les détails utiles.</p>
+                    </div>
+
+                    <!-- Benefit 6 -->
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m13 2-2 10h3L11 22" />
+                            </svg>
+                        </div>
+                        <h3>Une expertise rapide</h3>
+                        <p>Notre équipe est disponible à tout moment pour intervenir au plus vite en cas de besoin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expert Section -->
+        <section class="section section-expert" id="expert">
+            <div class="container grid">
+                <div class="expert-visual reveal">
+                    <img src="assets/partner-shiri.png" alt="M. Shiri Fares Hamza" class="expert-img shadow-gold">
+                </div>
+                <div class="expert-info">
+                    <span class="section-tag reveal">Votre Partenaire</span>
+                    <h2 class="section-title reveal">Mr. Shiri Fares Hamza</h2>
+                    <h3 class="expert-title reveal">Representant de STAR assurances et expert en produits financiers
+                        d'assurance vie et gestion d'Actifs, Gestion de Patrimoine & Gestion de
+                        Fortune</h3>
+                    <p class="expert-description reveal">
+                        Diplômé des Grandes Écoles de Commerce les plus prestigieuses, M. Shiri Fares Hamza possède une
+                        expertise reconnue dans les domaines de la gestion d'actifs, l'optimisation patrimoniale et la
+                        gestion de fortune pour une clientèle haut de gamme. Son approche allie rigueur académique,
+                        vision stratégique et accompagnement personnalisé de haut niveau.
+                    </p>
+                    <div class="partner-logos-container reveal">
+                        <img src="assets/logo.png" alt="STAR Assurances" class="partner-mini-logo">
+                        <img src="assets/ihec-logo.png" alt="IHEC Carthage" class="partner-mini-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="section section-cta" id="contact">
+            <div class="container text-center reveal">
+                <h2 class="cta-title">Prêt à sécuriser votre avenir ?</h2>
+                <p class="cta-text">Profitez de notre expertise pouravoir la meilleure solution d'optimisation fiscale
+                    et le rendement le plus élevé de vos placements
+                </p>
+                <button class="btn btn-gold btn-pulse btn-large open-offer-modal">Obtenir une Offre
+                    Personnalisée</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 7AYYA by STAR SHIRI FARES HAMZA . Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Offer Modal -->
+    <div id="offer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <div class="modal-logo-container">
+                    <img src="assets/logo.png" alt="STAR Logo" class="modal-logo">
+                </div>
+                <h2>Votre Offre 7AYYA</h2>
+                <p>Remplissez le formulaire ci-dessous pour vous rederiger vers notre simulatuer gratuit et etre assisté
+                    par notre equipe.</p>
+            </div>
+            <form id="offer-form" class="offer-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="last-name">Nom</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first-name">Prénom</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Votre prénom" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Numéro de téléphone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ex: 23 502 362" required>
+                </div>
+                <button type="submit" class="btn btn-gold btn-full">Accéder au simulateur</button>
+                <p class="form-consent">En soumettant ce formulaire, vous acceptez d’être contacté par téléphone.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
