@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Force scroll to top on reload
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     // Splash Screen Timer
     const splash = document.getElementById('splash-screen');
     if (splash) {
@@ -6,6 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
             splash.classList.add('hidden');
         }, 2000); // 2 seconds
     }
+
+    // Header Scroll Effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
     // Modal Logic
     const modal = document.getElementById('offer-modal');
@@ -81,15 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Header Scroll Effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+
 
     // Reveal on Scroll (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal');

@@ -17,7 +17,30 @@
     --transition-fast: 0.3s ease;
     --modal-bg: rgba(11, 17, 49, 0.95);
     /* Navy blue with transparency */
+    --announcement-height: 0px; /* Removed offset to avoid hiding content */
 }
+
+/* --- Header Banner --- */
+.header-banner {
+    background-color: var(--lime-accent);
+    color: var(--navy-blue);
+    padding: 8px 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    width: 100%;
+    pointer-events: auto; /* Enable interaction for banner */
+}
+
+.header-banner p {
+    margin: 0;
+}
+
+.header.scrolled .header-banner {
+    display: none;
+}
+
+
 
 /* --- Splash Screen --- */
 .splash-screen {
@@ -30,7 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    z-index: 20000;
     opacity: 1;
     visibility: visible;
     transition: opacity 1s ease, visibility 1s ease;
@@ -419,26 +442,33 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
+    height: auto;
+    min-height: var(--header-height);
     background-color: transparent;
     z-index: 1000;
     transition: var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    pointer-events: none; /* Allow clicks to pass through to content underneath */
 }
 
 .header.scrolled {
     background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     height: 70px;
+    min-height: 70px;
+    top: 0; /* Move to true top on scroll for better UX */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .nav {
-    height: 100%;
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     /* Ensure full width */
+    pointer-events: auto; /* Enable interaction for navigation */
 }
 
 .logo-group {
@@ -833,6 +863,25 @@ img {
 
     .header .nav-menu {
         display: none;
+    }
+
+    /* Splash Screen */
+    .splash-logo-container {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 2rem;
+    }
+
+    .splash-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .splash-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .splash-content p {
+        font-size: 1rem;
     }
 
     /* Hero */
