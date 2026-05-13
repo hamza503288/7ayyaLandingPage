@@ -147,4 +147,48 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ============================================
+    // DEADLINE SURPRISE POPUP (SIMPLIFIED)
+    // ============================================
+
+    const deadlinePopup = document.getElementById('deadline-popup');
+    const deadlineCloseBtn = document.getElementById('deadline-close-btn');
+    const deadlineCtaBtn = document.getElementById('deadline-cta');
+
+    function openDeadlinePopup() {
+        if (deadlinePopup) {
+            deadlinePopup.classList.add('active');
+        }
+    }
+
+    function closeDeadlinePopup() {
+        if (deadlinePopup) {
+            deadlinePopup.classList.remove('active');
+        }
+    }
+
+    // Show popup 3 seconds after page load
+    setTimeout(openDeadlinePopup, 3000);
+
+    // Event Listeners for close buttons and overlay
+    if (deadlineCloseBtn) {
+        deadlineCloseBtn.addEventListener('click', closeDeadlinePopup);
+    }
+
+    if (deadlinePopup) {
+        deadlinePopup.addEventListener('click', (e) => {
+            if (e.target === deadlinePopup) closeDeadlinePopup();
+        });
+    }
+
+    // CTA button logic
+    if (deadlineCtaBtn) {
+        deadlineCtaBtn.addEventListener('click', () => {
+            closeDeadlinePopup();
+            const modal = document.getElementById('offer-modal');
+            if (modal) modal.style.display = 'block';
+        });
+    }
+
 });

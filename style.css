@@ -17,7 +17,10 @@
     --transition-fast: 0.3s ease;
     --modal-bg: rgba(11, 17, 49, 0.95);
     /* Navy blue with transparency */
-    --announcement-height: 0px; /* Removed offset to avoid hiding content */
+    --announcement-height: 0px;
+    /* Removed offset to avoid hiding content */
+    --gold-accent: #d4af37;
+    /* premium gold */
 }
 
 /* --- Header Banner --- */
@@ -29,7 +32,8 @@
     font-size: 0.9rem;
     font-weight: 700;
     width: 100%;
-    pointer-events: auto; /* Enable interaction for banner */
+    pointer-events: auto;
+    /* Enable interaction for banner */
 }
 
 .header-banner p {
@@ -449,7 +453,8 @@ img {
     transition: var(--transition-fast);
     display: flex;
     flex-direction: column;
-    pointer-events: none; /* Allow clicks to pass through to content underneath */
+    pointer-events: none;
+    /* Allow clicks to pass through to content underneath */
 }
 
 .header.scrolled {
@@ -457,7 +462,8 @@ img {
     backdrop-filter: blur(10px);
     height: 70px;
     min-height: 70px;
-    top: 0; /* Move to true top on scroll for better UX */
+    top: 0;
+    /* Move to true top on scroll for better UX */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
@@ -468,7 +474,8 @@ img {
     align-items: center;
     width: 100%;
     /* Ensure full width */
-    pointer-events: auto; /* Enable interaction for navigation */
+    pointer-events: auto;
+    /* Enable interaction for navigation */
 }
 
 .logo-group {
@@ -956,5 +963,272 @@ img {
 
     .modal-logo {
         height: 50px;
+    }
+}
+
+/* ============================================
+   DEADLINE SURPRISE POPUP (EMERALD & BLACK)
+   ============================================ */
+
+.deadline-popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 30000;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(15px);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.deadline-popup-overlay.active {
+    display: flex;
+}
+
+.deadline-popup-box {
+    position: relative;
+    background: linear-gradient(135deg, #000000 0%, #064e42 100%);
+    color: #ffffff;
+    border: 1px solid rgba(80, 200, 120, 0.6);
+    border-radius: 20px;
+    padding: 4rem 2.5rem 3rem;
+    max-width: 540px;
+    width: 100%;
+    text-align: center;
+    box-shadow:
+        0 0 30px rgba(80, 200, 120, 0.4),
+        0 0 60px rgba(80, 200, 120, 0.2),
+        0 50px 100px -20px rgba(0, 0, 0, 0.9);
+    animation:
+        emeraldFadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+        emeraldPulse 3s ease-in-out infinite;
+    overflow: hidden;
+}
+
+/* Intense pulsating glow animation */
+@keyframes emeraldPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(80, 200, 120, 0.4), 0 50px 100px -20px rgba(0, 0, 0, 0.9);
+    }
+
+    50% {
+        box-shadow: 0 0 60px rgba(80, 200, 120, 0.8), 0 50px 100px -20px rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* Inclined Shimmer Sweep */
+.deadline-popup-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(105deg,
+            transparent 30%,
+            rgba(80, 200, 120, 0.5) 45%,
+            rgba(80, 200, 120, 0.5) 55%,
+            transparent 70%);
+    animation: shimmerSweep 3.5s infinite;
+    z-index: 0;
+    pointer-events: none;
+    transform: skewX(-20deg);
+}
+
+@keyframes shimmerSweep {
+    0% {
+        left: -150%;
+    }
+
+    40%,
+    100% {
+        left: 150%;
+    }
+}
+
+.deadline-popup-content,
+.deadline-popup-footer {
+    position: relative;
+    z-index: 1;
+    /* Stay above the beam */
+}
+
+@keyframes emeraldFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.deadline-popup-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.3s;
+}
+
+.deadline-popup-close:hover {
+    color: #50c878;
+    transform: rotate(90deg);
+}
+
+.deadline-popup-content {
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deadline-popup-logo {
+    width: 170px;
+    height: 170px;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 28px;
+    margin: 0 auto 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 40px rgba(80, 200, 120, 0.4),
+        0 0 0 8px rgba(80, 200, 120, 0.15);
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+.deadline-popup-title {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #50c878;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 10px rgba(80, 200, 120, 0.8),
+        0 0 30px rgba(80, 200, 120, 0.4);
+}
+
+.deadline-popup-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.deadline-date-highlight {
+    color: #c2d240;
+    font-weight: 950;
+    font-size: 1.8rem;
+    display: block;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    background: rgba(80, 200, 120, 0.15);
+    border: 1px solid rgba(80, 200, 120, 0.4);
+    border-radius: 12px;
+}
+
+.deadline-cta-btn {
+    width: 100%;
+    padding: 1.4rem;
+    background-color: #50c878;
+    color: #000000;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.deadline-cta-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(80, 200, 120, 0.5);
+}
+
+.deadline-popup-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deadline-popup-agent {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.deadline-popup-role {
+    font-size: 0.85rem;
+    color: #50c878;
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.deadline-popup-contact {
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.deadline-popup-contact a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.deadline-popup-contact a:hover {
+    color: #50c878;
+}
+
+/* Responsive Mobile */
+@media (max-width: 480px) {
+    .deadline-popup-box {
+        padding: 4rem 1.8rem 3rem;
+        width: 100%;
+        border-radius: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .deadline-popup-title {
+        font-size: 2.1rem;
+    }
+
+    .deadline-date-highlight {
+        font-size: 1.5rem;
+    }
+
+    .deadline-popup-logo {
+        width: 130px;
+        height: 130px;
+        padding: 18px;
+        margin-bottom: 2rem;
     }
 }
